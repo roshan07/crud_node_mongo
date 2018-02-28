@@ -1,0 +1,63 @@
+<h1>{{ title }}</h1>
+
+<body>
+    <div class="page">
+
+    <h1>hello node</h1>
+    <div class="insert">
+        <h3>Insert data</h3>
+    <form action="/insert" method="POST">
+        First name:<br>
+        <input type="text" placeholder="firstname" name="fname"><br> Last name:<br>
+        <input type="text" placeholder="lastname" name="lname"><br> Age:
+        <br>
+        <input type="text" placeholder="age" name="age">
+        <br><br>
+        <button class="button1" type="submit">Submit</button>
+    </form>
+    </div>
+
+    <div class="getdata">
+        <h3>Get Data</h3>
+        <a href="/getdata">Load Data</a>
+        <div>
+        {{# each persons }}
+            <article class="person">
+                <div>First name: {{ this.fname }}</div>
+                <div>Last name: {{ this.lname }}</div>
+                <div>Age: {{ this.age }}</div>
+                <div>ID: {{ this._id }}</div>
+            </article>
+        {{/each}}
+    </div>
+    </div>
+
+    <div class="update">
+        <h3>Update data</h3>
+    <form action="/update" method="POST">
+        Id:<br>
+        <input type="text" id="id" name="id"><br>
+        First name:<br>
+        <input type="text" name="fname"><br> Last name:<br>
+        <input type="text" name="lname"><br> Age:
+        <br>
+        <input type="text" name="age">
+        <br><br>
+        <button class="button2" type="submit">Update</button>
+    </form>
+    </div>
+
+    <div class="delete">
+        <h3>Delete data</h3>
+    <form action="/delete" method="POST">
+        Id:<br>
+        <input type="text" id="id" name="id">
+        <br><br>
+        <button class="button3" type="submit">Delete</button>
+    </form>
+    </div>
+
+    </div>
+</body>
+
+</html>
